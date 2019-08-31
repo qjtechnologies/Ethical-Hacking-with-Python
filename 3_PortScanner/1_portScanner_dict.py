@@ -1,7 +1,23 @@
+'''
+ToDo: Create a PortScanner Using Nmap using nmap function calls
+
+Output:
+Host: <IP>(<HostName>)
+Status: Up/Down
+Services and Ports:
+<Protocol> || <Port> || <Service>
+...
+
+Related Links: https://pypi.org/project/python-nmap/
+
+Author: Qaidjohar Jawadwala
+
+'''
+
 import nmap
 
 nm = nmap.PortScanner()
-scanData = nm.scan('192.168.43.80-150','1-100')
+scanData = nm.scan('192.168.43.120-180','1-5000')
 
 #print(scanData)
 for hostip in scanData['scan']:
