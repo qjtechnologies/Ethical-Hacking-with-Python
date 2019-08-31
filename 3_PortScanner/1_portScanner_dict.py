@@ -14,37 +14,23 @@ Author: Qaidjohar Jawadwala
 
 '''
 
-import nmap
+import nmap	#import nmap library For Installation: #pip install python-nmap
 
-nm = nmap.PortScanner()
-scanData = nm.scan('192.168.43.120-180','1-5000')
+nm = nmap.PortScanner()	#Initialize object for port scanner 
+scanData = nm.scan('192.168.43.120-190','1-5000')	#Scanning Hosts and Ports
 
-#print(scanData)
+#Looping through the scanned hosts (IP Address)
 for hostip in scanData['scan']:
+	#Printing host IP and host name
 	print("Host:"+hostip + '('+scanData['scan'][hostip]['hostnames'][0]['name']+')')
+	#Printing Host Status of Up/Down
 	print('Status:'+scanData['scan'][hostip]['status']['state'])
 	
-	print('Ports:')
-	for proto in nm[hostip].all_protocols():
-		
-		#print(proto)
-		#port = nm[hostip][proto].keys()
-		for port in nm[hostip][proto].keys():
-			print(str(port) + ' ' + proto + ' ' + nm[hostip][proto][port]['product'])
-	print('\n')
-			#print(port)
-			#print(nm[hostip][proto][port]['product'])
-		#protocol = nm[hostip].all_protocols()[0]
-		#port = nm[hostip][protocol].keys()[0]
-		#product = nm[hostip][protocol][port]['product']
-		#print(str(port) + ' ' + protocol + ' ' + product)
+	print('Services and Ports:')
+	#assigning the protocol i.e. TCP / UDP
+	proto = scanData['scan'][hostip].keys()[-1]
+	#looping through the ports for getting the service names of all products
+	for port in scanData['scan'][hostip][proto].keys():
+		print('%s\t||\t%s\t||\t%s' %(proto,port,nm[hostip][proto][port]['product']))
 
-'''
-Host: <IP Address>(<hostname>)
-Status: Up/Down
-Ports:
-Number-tcp/udp-Service
-Number-tcp/udp-Service
-Number-tcp/udp-Service
-
-'''
+	print('')
