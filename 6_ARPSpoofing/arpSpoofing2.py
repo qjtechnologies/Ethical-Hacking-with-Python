@@ -9,7 +9,7 @@ conf.verb = 0
 
 def getMAC(ip):
     try:
-        val = arping(ip)
+        val` = arping(ip)
         return val[0][0][1].src
     except:
         return 0
