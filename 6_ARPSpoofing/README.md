@@ -1,7 +1,9 @@
 # Performing ARP Spoofing with arpspoof
 
 ## Activating IP Forwarding on Attacker Machine
+```
 echo 1 > /proc/sys/net/ipv4/ip_forward
+```
 
 ## Running arpspoof 
 - Syntax
