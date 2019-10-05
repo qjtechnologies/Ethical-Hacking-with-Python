@@ -1,0 +1,12 @@
+future
+past
+present
+today
+tomorrow
+yesterday
+verysecure
+secure
+secret
+unsecure
+hacked
+nothacked
