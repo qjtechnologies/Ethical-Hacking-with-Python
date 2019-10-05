@@ -5,17 +5,14 @@
 cat /etc/shadow
 ```
 
-2. Creating a Password Protected Zip File by compressing file
+### John the Ripper
+1. Cracking all Unix Account passwords
 ```
-zip --encrypt zipfile.zip myfile1
-```
-
-3. Creating a Password Protected Zip File by compressing multiple files
-```
-zip --encrypt zipfile.zip myfile1 myfile2 myfile3
+john /etc/shadow
 ```
 
-4. Decompress a Password Protected Zip File
+2. Viewing all Cracked Passwords
 ```
-unzip zipfile.zip
+john --show /etc/shadow
 ```
+
