@@ -43,5 +43,11 @@ gunzip /usr/share/wordlists/rockyou.txt
 aircrack-ng OURFILE-01.cap -w /usr/share/wordlists/rockyou.txt
 ```
 
-Thus, you will successfully be able to crack the Wi-Fi WPA2 Password.
+9. Thus, you will successfully be able to crack the Wi-Fi WPA2 Password.
+
+10. To run your Wi-Fi interface card back to normal mode, use the following command.
+```
+airmon-ng stop wlan0mon
+service network-manager restart
+```
 
