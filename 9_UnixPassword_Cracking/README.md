@@ -1,6 +1,6 @@
 # Unix Password Cracking using Dictionary Attacks
 
-## Open a Unix File Password Shadow File
+### Open a Unix File Password Shadow File
 ```
 cat /etc/shadow
 ```
