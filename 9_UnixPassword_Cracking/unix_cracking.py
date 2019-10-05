@@ -25,7 +25,7 @@ python unix_cracking.y <name_of_wordlist> <name of unixpassword file>
 
 import crypt  # To perform Hashing and Cryptography functions
 
-f = open('mypass', 'r')  # Open the password hash file
+f = open('mypassword.txt', 'r')  # Open the password hash file
 filehashval = f.read()  # reading the password hash
 hashpass = filehashval.split(":")[1]
 # Parsing and extracting hash id and salt
